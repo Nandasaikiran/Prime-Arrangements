@@ -1,0 +1,17 @@
+1175:LEETCODE
+import math as m
+        l=[True]*(n+1)
+        l[0]=False
+        l[1]=False
+        c=0
+        for i in range(2,int(m.sqrt(n))+1):
+            if l[i]==True:
+                for j in range(i*i,n+1,i):
+                    l[j]=False
+        for i in range(len(l)):
+            if l[i]==True:
+                c+=1
+        p=n-c
+        print(c)
+        v=m.factorial(c)*m.factorial(p)
+        return v%1000000007
